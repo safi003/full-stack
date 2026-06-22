@@ -1,5 +1,5 @@
 // URL de base de l'API backend (variable d'environnement Vite)
-const API_URL = `${import.meta.env.VITE_API_URL}/auth`;
+const API_URL = `${import.meta.env.VITE_API_URL}/api/auth`;
 
 // Inscription d'un nouvel utilisateur
 export const registerUser = async (userData) => {
