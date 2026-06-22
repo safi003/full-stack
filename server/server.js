@@ -18,8 +18,10 @@ dotenv.config();
 const app = express();
 
 // Étape 4: Middleware globaux
-// cors() - autorise les requêtes provenant d'autres domaines
-app.use(cors());
+// cors() - autorise uniquement les requêtes depuis le CLIENT_URL (déploiement séparé)
+app.use(cors({
+  origin: process.env.CLIENT_URL || "http://localhost:5173",
+}));
 // express.json() - permet de parser le body des requêtes en JSON
 app.use(express.json());
 
