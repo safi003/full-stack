@@ -10,6 +10,7 @@ import dotenv from "dotenv";
 
 // Importation des routes (créées dans le dossier routes/)
 import authRoutes from "./routes/auth.js";
+import cartRoutes from "./routes/cart.js";
 
 // Étape 2: Configuration des variables d'environnement
 dotenv.config();
@@ -32,8 +33,8 @@ app.get("/", (req, res) => {
 });
 
 // Étape 6: Montage des routes
-// Toutes les routes d'authentification seront préfixées par /api/auth
 app.use("/api/auth", authRoutes);
+app.use("/api/cart", cartRoutes);
 
 // Étape 7: Connexion à MongoDB via Mongoose
 mongoose.connect(process.env.MONGO_URI)
